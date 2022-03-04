@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Post</th>
+            <th>Number</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let i of players; let j = index">
+            <td>{{j}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.post}}</td>
+            <td>{{i.nbr}}</td>
+            <td>{{i.age}}</td>
+            <td>
+                <button class="btn btn-info"  style="margin-right: 10px;" (click)="Display(i._id, 'player')">Display</button>
+                <button class="btn btn-warning" style="margin-right: 10px;" (click)="Edit(i._id)">Edit</button>
+                <button class="btn btn-danger" style="margin-right: 10px;" (click)="Delete(i._id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>

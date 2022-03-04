@@ -1,0 +1,41 @@
+<app-title-header [title]="t"></app-title-header>
+
+  
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <form #loginForm="ngForm" (ngSubmit)="login()">
+            <div class="form-group">
+              <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="Email" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" [(ngModel)]="user.pwd" placeholder="Password" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary py-3 px-5"> Login </button>
+            </div>
+          </form>  
+        </div>
+        <div class="col-lg-4 ml-auto">
+          
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <strong class="text-white d-block">Address</strong>
+              273 South Riverview Rd. <br> New York, NY 10011
+            </li>
+            <li class="mb-2">
+              <strong class="text-white d-block">Email</strong>
+              <a href="#">info@unslate.co</a>
+            </li>
+            <li class="mb-2">
+              <strong class="text-white d-block">
+                Phone
+              </strong>
+              <a href="#">+12 345 6789 012</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

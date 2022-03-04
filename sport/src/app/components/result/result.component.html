@@ -1,0 +1,24 @@
+<div class="container">
+    
+
+    <div class="row">
+      <div class="col-lg-12">
+        
+        <div class="d-flex team-vs">
+          <span class="score">{{matchInput.scoreOne}} - {{matchInput.scoreTwo}}</span>
+          <div class="team-1 w-50">
+            <div class="team-details w-100 text-center">
+              <img src="assets/images/logo_1.png" alt="Image" class="img-fluid">
+              <h3>{{matchInput.teamOne}} <span *ngIf="result == 2"> (loss)</span> <span *ngIf="result == 1"> (win)</span> <span *ngIf="result == 0"> (draw)</span> </h3>
+            </div>
+          </div>
+          <div class="team-2 w-50">
+            <div class="team-details w-100 text-center">
+              <img src="assets/images/logo_2.png" alt="Image" class="img-fluid">
+              <h3>{{matchInput.teamTwo}} <span *ngIf="result == 2"> (win)</span> <span *ngIf="result == 1"> (loss)</span> <span *ngIf="result == 0"> (draw)</span> </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

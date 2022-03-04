@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Foundation</th>
+            <th>Stadium</th>
+            <th>Owner</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let i of teams, let j = index">
+            <td>{{j}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.foundation}}</td>
+            <td>{{i.stadium}}</td>
+            <td>{{i.owner}}</td>
+            <td>
+                <button class="btn btn-info"  style="margin-right: 10px;" (click)="Display(i._id, 'team')">Display</button>
+                <button class="btn btn-warning" style="margin-right: 10px;" (click)="Edit(i._id)">Edit</button>
+                <button class="btn btn-danger" style="margin-right: 10px;" (click)="Delete(i._id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>

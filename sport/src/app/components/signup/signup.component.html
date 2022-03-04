@@ -1,0 +1,104 @@
+<app-title-header [title]="t"></app-title-header>
+
+  
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <form [formGroup]='signupForm'>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName='firstname' placeholder="FirstName">
+            </div>
+
+            <div *ngIf='signupForm.controls["firstname"].invalid &&
+            (signupForm.controls["firstname"].touched || 
+            signupForm.controls["firstname"].dirty)' >
+              <div *ngIf='signupForm.controls["firstname"].errors.minlength'>
+                  <p style="color:red">First Name has to have at last 3 charcters</p>
+              </div>
+              <div *ngIf='signupForm.controls["firstname"].errors.required'>
+                  <p style="color:red"> First Name is Required</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName='lastname' placeholder="LastName">
+            </div>
+
+            <div *ngIf='signupForm.controls["lastname"].invalid &&
+            (signupForm.controls["lastname"].touched || 
+            signupForm.controls["lastname"].dirty)' >
+              <div *ngIf='signupForm.controls["lastname"].errors.minlength'>
+                  <p style="color:red">Last Name has to have at last 8 charcters</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="email" class="form-control" formControlName='email' placeholder="Email">
+            </div>
+
+            <div *ngIf='signupForm.controls["email"].invalid &&
+            (signupForm.controls["email"].touched || 
+            signupForm.controls["email"].dirty)' >
+              <div *ngIf='signupForm.controls["email"].errors.email'>
+                  <p style="color:red">Email has to have @</p>
+              </div>
+              <div *ngIf='signupForm.controls["email"].errors.required'>
+                  <p style="color:red"> Email is Required</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control" formControlName='pwd' placeholder="Password">
+            </div>
+
+            <div *ngIf='signupForm.controls["pwd"].invalid &&
+            (signupForm.controls["pwd"].touched || 
+            signupForm.controls["pwd"].dirty)' >
+              <div *ngIf='signupForm.controls["pwd"].errors.minlength'>
+                  <p style="color:red">Password has to have at last 5 charcters</p>
+              </div>
+              <div *ngIf='signupForm.controls["pwd"].errors.required'>
+                  <p style="color:red"> Password is Required</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" formControlName='confirmPwd' placeholder="ConfirmPassword">
+            </div>
+
+            <div *ngIf='signupForm.controls["confirmPwd"].invalid &&
+            (signupForm.controls["confirmPwd"].touched || 
+            signupForm.controls["confirmPwd"].dirty)' >
+              <div *ngIf='signupForm.controls["confirmPwd"].errors.MustMatch'>
+                  <p style="color:red">Password is not the same</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary py-3 px-5" (click)='signup()'> Signup </button>
+            </div>
+          </form>  
+        </div>
+        <div class="col-lg-4 ml-auto">
+          
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <strong class="text-white d-block">Address</strong>
+              273 South Riverview Rd. <br> New York, NY 10011
+            </li>
+            <li class="mb-2">
+              <strong class="text-white d-block">Email</strong>
+              <a href="#">info@unslate.co</a>
+            </li>
+            <li class="mb-2">
+              <strong class="text-white d-block">
+                Phone
+              </strong>
+              <a href="#">+12 345 6789 012</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
